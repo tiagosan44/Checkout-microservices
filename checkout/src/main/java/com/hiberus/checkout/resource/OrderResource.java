@@ -9,7 +9,6 @@ import io.swagger.annotations.ApiResponses;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.omg.CosNaming.NamingContextPackage.NotFound;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,7 +44,7 @@ public class OrderResource {
 	@GetMapping(value = "/orders/{orderId}")
 	public ResponseEntity<Order> getOrderById(
 			@Valid @Pattern(regexp = REGEX_FOR_NUMBERS, message = MESSAGE_FOR_REGEX_NUMBER_MISMATCH)
-			@PathVariable Long orderId) throws NotFound {
+			@PathVariable Long orderId) {
 		return ResponseEntity.ok(orderService.getById(orderId));
 	}
 }

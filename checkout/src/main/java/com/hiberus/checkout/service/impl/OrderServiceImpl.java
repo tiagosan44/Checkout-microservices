@@ -12,7 +12,6 @@ import com.hiberus.checkout.webClient.LogisticService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.omg.CosNaming.NamingContextPackage.NotFound;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -47,7 +46,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public Order getById(final Long clientId) throws NotFound {
-		return orderRepository.findById(clientId).orElseThrow(NotFound::new);
+	public Order getById(final Long clientId) {
+		return orderRepository.findById(clientId).orElseThrow(RuntimeException::new);
 	}
 }

@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "bill-config.billServiceURL",
+      "type": "java.lang.String",
+      "description": "Description for bill-config.billServiceURL."
+  }
+] }

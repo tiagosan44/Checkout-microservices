@@ -1,0 +1,31 @@
+version: '2.0'
+services: 
+    bill-service:
+        build: ./bill
+        ports: 
+            - "7000:7000"
+        restart: always
+        networks: 
+            - checkout-network
+
+    logistic-service:
+        build: ./logistic
+        ports: 
+            - "8000:8000"
+        restart: always
+        networks: 
+            - checkout-network
+
+    checkout-service:
+        build: ./checkout
+        ports: 
+            - "9000:9000"
+        restart: always
+        networks: 
+            - checkout-network
+        depends_on: 
+            - bill-service
+            - logistic-service
+
+networks:
+    checkout-network:

@@ -61,15 +61,15 @@ To see more information about each service you could go to each application swag
  checkout --> http://localhost:9000/swagger-ui.html
 ```
 
-## Frameworks / librarys
+## Frameworks / libraries
 
 ### Maven 
 
-Is useful tool for manage and build projects, I used it to build bill-service and logistic-service.
+Is useful tool for managing and building projects, I used it to build bill-service and logistic-service.
 
 ### Gradle
 
-Is a build automation system that I used for manage checkout-service dependencies, it's a little bit more readeable than maven.
+Is a build automation system that I used for managing checkout-service dependencies, it's a little bit more readeable than maven.
 
 ### Webflux
 
